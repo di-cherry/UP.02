@@ -1,0 +1,41 @@
+﻿<Window x:Class="Medvedeva_PrivateAdertisementService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medvedeva_PrivateAdertisementService"
+        mc:Ignorable="d"
+        Title="Частные объявления" Height="450" Width="800" 
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BackButton"
+                    Content="Назад"
+                    Width="80"
+                    Height="30"
+                    HorizontalContentAlignment="Center"
+                    Click="BackButton_Click"/>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal"
+                        VerticalAlignment="Center" HorizontalAlignment="Right"
+                        Margin="0,0,10,0">
+                <Image Source="\Resources\Лого.png"/>
+            </StackPanel>
+        </Grid>
+
+        <Frame Grid.Row="1"
+               x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

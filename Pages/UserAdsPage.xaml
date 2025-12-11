@@ -1,0 +1,90 @@
+﻿<Page x:Class="Medvedeva_PrivateAdertisementService.UserAdsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Medvedeva_PrivateAdertisementService"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Мои объявления">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical" Margin="10">
+
+                <TextBlock Text="Мои объявления"
+                           Style="{StaticResource PageTitle}"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Content="Добавить объявление"
+                            Style="{StaticResource SuccessButton}"
+                            Click="Add_Click"
+                            Height="38"
+                            Margin="0,0,15,10"/>
+                    <Button Content="Завершенные объявления"
+                            Click="ShowCompletedAds_Click"
+                            Margin="0,0,15,10"/>
+                    <Button Content="Все объявления"
+                            Click="AdsPage_Click"
+                            Margin="0,0,0,10"/>
+                </StackPanel>
+
+                <ItemsControl x:Name="UserAdsList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource AdCard}">
+
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="120"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding ImagePath}"
+                                           Width="140" Height="140"
+                                           Stretch="UniformToFill"
+                                           Margin="5"/>
+
+                                    <StackPanel Grid.Column="1" Margin="10">
+                                        <TextBlock Text="{Binding Title}"
+                                                   Style= "{StaticResource SubTitle}"/>
+                                        <TextBlock Text="{Binding Description}"
+                                                   TextWrapping="Wrap"
+                                                   Margin="0 5 0 5"
+                                                   Foreground="{StaticResource SecondaryText}"/>
+                                        <TextBlock Text="{Binding Price, StringFormat='Цена: {0} ₽'}"
+                                                   FontWeight="Bold"
+                                                   Foreground="{StaticResource PrimaryText}"/>
+                                        <TextBlock Text="{Binding Status, StringFormat='Статус: {0}'}"
+                                                   Margin="0 5 0 0"
+                                                  Foreground="{StaticResource SecondaryText}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="2"
+                                                VerticalAlignment="Center">
+                                        <Button Content="Редактировать"
+                                                Margin="0 5"
+                                                Width="150"
+                                                Height="30"
+                                                Tag="{Binding AdID}"
+                                                Click="Edit_Click"/>
+                                        <Button Content="Завершить"
+                                                Width="150"
+                                                Height="30"
+                                                Margin="0 5"
+                                                Style="{StaticResource DangerButton}"
+                                                Tag="{Binding AdID}" 
+                                                Click="Finish_Click"/>
+                                    </StackPanel>
+
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
