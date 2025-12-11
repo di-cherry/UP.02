@@ -30,36 +30,33 @@
                      Margin="0 8 0 16"/>
 
             <StackPanel Orientation="Horizontal" Margin="0 0 0 16">
-                <StackPanel Width="150">
+                <StackPanel Width="170">
                     <TextBlock Text="Город"/>
                     <ComboBox x:Name="CityBox" Height="30"/>
                 </StackPanel>
 
-                <StackPanel Width="150" Margin="16 0 0 0">
+                <StackPanel Width="170" Margin="16 0 0 0">
                     <TextBlock Text="Категория"/>
                     <ComboBox x:Name="CategoryBox" Height="30"/>
                 </StackPanel>
 
-                <StackPanel Width="150" Margin="16 0 0 0">
+                <StackPanel Width="170" Margin="16 0 0 0">
                     <TextBlock Text="Тип"/>
                     <ComboBox x:Name="TypeBox" Height="30"/>
                 </StackPanel>
 
-                <StackPanel Width="150" Margin="16 0 0 0">
+                <StackPanel Width="170" Margin="16 0 0 0">
                     <TextBlock Text="Статус объявления"/>
                     <ComboBox x:Name="StatusBox" Height="30"/>
                 </StackPanel>
 
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 16">
-                <Image x:Name="AdImage"
-                       Width="150"
-                       Height="150"
-                       Stretch="UniformToFill"
-                       Margin="0 0 16 0"/>
-                
-            </StackPanel>
+            <Image x:Name="AdImage"
+                   Width="200"
+                   Height="150"
+                   Stretch="UniformToFill"/>
+
             <Button Content="Выбрать фото"
                     Width="150"
                     Click="ChooseImage_Click"

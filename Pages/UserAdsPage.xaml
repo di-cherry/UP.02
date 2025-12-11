@@ -65,12 +65,12 @@
                                                 VerticalAlignment="Center">
                                         <Button Content="Редактировать"
                                                 Margin="0 5"
-                                                Width="150"
+                                                Width="130"
                                                 Height="30"
                                                 Tag="{Binding AdID}"
                                                 Click="Edit_Click"/>
                                         <Button Content="Завершить"
-                                                Width="150"
+                                                Width="130"
                                                 Height="30"
                                                 Margin="0 5"
                                                 Style="{StaticResource DangerButton}"
