@@ -3,12 +3,6 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Просмотр объявлений">
 
-    <Page.Resources>
-        <SolidColorBrush x:Key="PrimaryText" Color="#37474F"/>
-        <SolidColorBrush x:Key="SecondaryText" Color="#78909C"/>
-        <SolidColorBrush x:Key="AccentColor" Color="#FF9C1A"/>
-    </Page.Resources>
-
     <Grid Margin="20">
 
         <Grid.RowDefinitions>
